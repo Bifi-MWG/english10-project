@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Scotland Project Challenge 2026/27: Prüfungsablauf, Bewertung, Meilensteine und persönliche Vorbereitung verständlich erklärt.">
+<title>Scotland Project – Dein Weg zur Schulaufgabe</title>
+<style>
+:root { --ink:#132e43; --muted:#4d616f; --paper:#f7f8f5; --white:#fff; --line:#d8e2df; --build:#265b89; --trace:#7b4e92; --present:#176e64; --defend:#9a4b20; --mint:#e8f4ee; --sand:#fff2da; --radius:18px; }
+* { box-sizing:border-box; }
+html { scroll-padding-top:94px; }
+body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+button,input { font:inherit; }
+a { color:#165d82; text-underline-offset:.18em; }
+a:hover { text-decoration-thickness:2px; }
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible { outline:3px solid #dfac44; outline-offset:4px; }
+h1,h2,h3,h4,p { margin-top:0; }
+h1,h2,h3,h4 { line-height:1.18; }
+h1 { font-size:clamp(2.3rem,5.4vw,4.1rem); letter-spacing:-.045em; max-width:880px; margin-bottom:24px; }
+h2 { font-size:clamp(1.8rem,3.2vw,2.6rem); letter-spacing:-.025em; margin-bottom:16px; }
+h3 { font-size:1.35rem; margin-bottom:16px; }
+h4 { font-size:1.07rem; margin-bottom:10px; }
+p { margin-bottom:17px; }
+li { margin-bottom:8px; }
+strong { font-weight:750; }
+.skip { position:absolute; left:16px; top:-100px; background:#fff; padding:12px; z-index:100; }
+.skip:focus { top:10px; }
+.wrap { max-width:1180px; margin:0 auto; padding:0 32px; }
+.topbar { background:#fff; border-bottom:1px solid var(--line); }
+.brand { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; align-items:center; padding:19px 0; font-size:.88rem; font-weight:700; }
+.brand span { color:var(--muted); font-weight:500; }
+.hero { background:var(--ink); color:#fff; padding:56px 0 46px; }
+.eyebrow { font-size:.76rem; line-height:1.5; letter-spacing:.12em; text-transform:uppercase; font-weight:750; margin:0 0 16px; }
+.hero .eyebrow { color:#a9dacb; }
+.lead { font-size:1.14rem; max-width:810px; color:#dce8ec; }
+.hero-answer { max-width:950px; font-size:1.1rem; border-left:3px solid #abdcc7; padding-left:20px; margin-top:30px; }
+.hero-answer strong { color:#fff; }
+.jump-links { display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 0; }
+.jump-links a { background:#fff; color:var(--ink); text-decoration:none; font-weight:700; padding:12px 17px; border-radius:9px; }
+.jump-links a.secondary { background:transparent; border:1px solid #78929f; color:#fff; }
+.sticky-nav { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line); }
+.nav-inner { display:flex; gap:24px; overflow-x:auto; scrollbar-width:thin; padding-top:15px; padding-bottom:15px; }
+.nav-inner a { white-space:nowrap; font-size:.89rem; font-weight:700; text-decoration:none; color:var(--muted); }
+.nav-inner a:hover { color:var(--ink); }
+main { padding-top:28px; }
+.quick-overview { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:0 0 22px; }
+.metric { padding:23px 25px; border:1px solid var(--line); background:#fff; border-radius:var(--radius); }
+.metric strong { font-size:2.5rem; line-height:1; display:block; letter-spacing:-.035em; }
+.metric span { display:block; margin-top:8px; color:var(--muted); font-size:.95rem; }
+.overview-band { background:#e8f0f2; border-radius:var(--radius); padding:24px 26px; margin-bottom:28px; }
+.overview-band p:last-child { margin-bottom:0; }
+.section { padding-top:48px; padding-bottom:48px; border-bottom:1px solid var(--line); }
+.section-head { max-width:830px; margin-bottom:28px; }
+.section-head p:last-child { color:var(--muted); }
+.section-index { font-size:.78rem; letter-spacing:.1em; font-weight:750; color:var(--present); text-transform:uppercase; margin-bottom:10px; }
+.two { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+.three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.panel { padding:26px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); }
+.panel p:last-child,.panel ul:last-child { margin-bottom:0; }
+.panel ul { padding-left:21px; }
+.stage-heading { margin-bottom:5px; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-weight:750; color:var(--muted); }
+.stage-number { display:inline-grid; width:34px; height:34px; place-content:center; background:var(--ink); color:white; border-radius:50%; margin-right:8px; font-size:.9rem; }
+.schedule { margin:0 0 22px; }
+.exam-card { border-top:5px solid var(--present); }
+.exam-card.defence { border-top-color:var(--defend); }
+.time { display:inline-block; color:var(--muted); font-size:1rem; }
+.callout { background:var(--mint); padding:21px 25px; border-radius:12px; margin:24px 0 0; }
+.callout.warning { background:var(--sand); }
+.callout p:last-child { margin:0; }
+.label { font-size:.75rem; letter-spacing:.055em; text-transform:uppercase; color:var(--muted); font-weight:750; margin:20px 0 6px; }
+.rating-strip { display:flex; width:100%; height:19px; overflow:hidden; border-radius:8px; margin:20px 0; }
+.rating-strip span:nth-child(1) { width:15%; background:var(--build); }
+.rating-strip span:nth-child(2) { width:15%; background:var(--trace); }
+.rating-strip span:nth-child(3) { width:30%; background:var(--present); }
+.rating-strip span:nth-child(4) { width:40%; background:var(--defend); }
+.strip-legend { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-bottom:28px; font-size:.87rem; }
+.strip-legend strong { display:block; }
+.strip-legend span { color:var(--muted); }
+.assessment-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+.assessment { padding:27px; background:#fff; border:1px solid var(--line); border-top:5px solid; border-radius:var(--radius); }
+.assessment.build { border-top-color:var(--build); }
+.assessment.trace { border-top-color:var(--trace); }
+.assessment.present { border-top-color:var(--present); }
+.assessment.defend { border-top-color:var(--defend); }
+.part-top { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.part-name { font-size:1.22rem; letter-spacing:.04em; font-weight:800; }
+.points { font-size:2.2rem; letter-spacing:-.035em; font-weight:800; line-height:1.2; }
+.points small { font-size:.8rem; letter-spacing:0; }
+.meta { font-size:.86rem; color:var(--muted); margin:8px 0 23px; }
+.criteria { padding:0; margin:21px 0; list-style:none; }
+.criteria li { border-top:1px solid var(--line); padding:13px 0 0; margin-top:13px; }
+.criteria p { font-size:.93rem; color:var(--muted); margin:5px 0 0; }
+.criterion-title { display:flex; justify-content:space-between; gap:8px; font-size:.87rem; }
+.criterion-title span { white-space:nowrap; }
+.boundary { margin:23px 0 0; padding:16px 18px; border-radius:10px; background:#f1f4f4; font-size:.94rem; }
+.comparison { margin-top:26px; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:27px; }
+.comparison .two { gap:30px; }
+.example { background:#f0f5f6; border-left:3px solid #94b4bf; padding:15px 18px; margin-top:18px; }
+.example p:last-child { margin-bottom:0; }
+.example .label { margin-top:0; }
+.question-area { background:#fff; border-top:4px solid var(--defend); padding:25px; border-radius:var(--radius); }
+.question-area .english { font-size:.77rem; letter-spacing:.025em; font-weight:750; color:var(--defend); margin-bottom:8px; }
+.question-area h3 { font-size:1.19rem; }
+.question-area p { font-size:.95rem; }
+.practice-question { font-style:italic; padding-top:14px; border-top:1px solid var(--line); margin-top:20px; }
+.milestones { margin-top:22px; }
+.milestone { display:grid; grid-template-columns:145px minmax(0,1fr); gap:30px; padding:28px 0; border-bottom:1px solid var(--line); }
+.milestone:last-child { border-bottom:0; }
+.milestone-marker span { display:block; font-weight:800; color:var(--present); font-size:1.15rem; }
+.milestone-marker time { display:block; color:var(--muted); margin-top:5px; font-size:.9rem; }
+.milestone h3 { margin:2px 0 16px; }
+.milestone .label { margin-top:15px; }
+.connections { list-style:none; padding:0; margin:20px 0 0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 18px; }
+.connections li { display:flex; align-items:flex-start; gap:9px; margin:0; font-size:.88rem; }
+.tag { border-radius:5px; padding:3px 7px; font-size:.65rem; letter-spacing:.035em; line-height:1.6; font-weight:800; color:#fff; display:inline-block; flex-shrink:0; }
+.tag.build { background:var(--build); }.tag.trace { background:var(--trace); }.tag.present { background:var(--present); }.tag.defend { background:var(--defend); }
+.process-steps { counter-reset:process; list-style:none; padding:0; }
+.process-steps > li { counter-increment:process; position:relative; padding:0 0 20px 42px; margin-bottom:12px; border-bottom:1px solid var(--line); }
+.process-steps > li:before { content:counter(process); position:absolute; left:0; top:0; font-weight:800; color:var(--present); font-size:1.15rem; }
+.process-steps h3 { font-size:1.14rem; margin:0 0 8px; }
+.process-steps p { margin:0 0 8px; }
+.process-steps .why { color:var(--muted); font-size:.94rem; }
+.doc-card { background:#fff; border:1px solid var(--line); padding:25px; border-radius:var(--radius); }
+.doc-card h3 { font-size:1.2rem; }
+.doc-card .label { margin-top:15px; }
+.path { font-size:.92rem; background:#eef3f5; padding:14px 16px; border-radius:9px; overflow-wrap:anywhere; }
+.submission { padding:27px; border-radius:var(--radius); background:#fff; border:1px solid var(--line); }
+.submission.build { border-top:5px solid var(--build); }
+.submission.trace { border-top:5px solid var(--trace); }
+.submission h3 { font-size:1.2rem; }
+.submission ol { padding-left:22px; }
+.deadline { background:var(--ink); color:white; border-radius:var(--radius); padding:26px; margin-bottom:24px; }
+.deadline strong { display:block; font-size:1.6rem; line-height:1.25; margin:8px 0; }
+.deadline p { margin:0; color:#dbe8ed; }
+details { background:#fff; border:1px solid var(--line); border-radius:11px; margin:12px 0; }
+summary { cursor:pointer; padding:18px 20px; font-weight:750; }
+details[open] summary { border-bottom:1px solid var(--line); }
+details > div { padding:19px 20px; }
+details > div p:last-child { margin-bottom:0; }
+.focus-list { list-style:none; padding:0; margin-bottom:0; }
+.focus-list li { padding:12px 0; margin:0; border-top:1px solid var(--line); }
+.focus-list label { display:flex; gap:12px; align-items:flex-start; }
+input[type=checkbox],input[type=radio] { accent-color:var(--present); flex-shrink:0; width:21px; height:21px; margin:3px 0 0; }
+.readiness { margin-top:24px; }
+.quiz-question { border:1px solid var(--line); border-radius:14px; background:#fff; padding:20px 23px; margin:26px 0; min-width:0; }
+.quiz-question legend { font-weight:750; padding:0 8px; max-width:100%; line-height:1.45; }
+.quiz-question legend > span { color:var(--present); margin-right:7px; }
+.choice { display:flex; align-items:flex-start; gap:12px; padding:12px 14px; border:1px solid var(--line); border-radius:8px; margin:10px 0; cursor:pointer; }
+.choice:has(input:checked) { background:#eef7f2; border-color:#82b4a0; }
+.self-answer { margin-top:16px; border:0; background:#f1f5f4; }
+.self-answer summary { padding:12px 15px; font-size:.92rem; }
+.self-answer p { padding:14px 15px; margin:0; font-size:.95rem; }
+.quiz-feedback { margin:16px 0; padding:14px 16px; background:var(--sand); border-radius:9px; font-size:.95rem; }
+.quiz-feedback.correct { background:var(--mint); }
+button.action { padding:12px 19px; background:var(--present); color:white; border:1px solid var(--present); border-radius:9px; font-weight:750; cursor:pointer; min-height:48px; touch-action:manipulation; }
+button.action.secondary { background:white; color:var(--present); }
+.quiz-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.quiz-result { margin-top:19px; padding:19px 22px; background:var(--mint); border-radius:12px; }
+.js-only { display:none; }
+.js .js-only { display:block; }
+.js .quiz-actions.js-only { display:flex; }
+[hidden] { display:none !important; }
+.small { font-size:.86rem; color:var(--muted); }
+.footer { padding:32px 0 38px; color:var(--muted); font-size:.86rem; }
+.footer a { margin-right:18px; }
+@media(min-width:1450px) { .wrap { max-width:1240px; } }
+@media(max-width:850px) { .three { grid-template-columns:1fr; } .question-area { padding:24px; } .wrap { padding-left:24px; padding-right:24px; } .assessment { padding:23px; } .nav-inner { gap:20px; } }
+@media(max-width:620px) { body { font-size:16px; } .wrap { padding-left:18px; padding-right:18px; } .brand { font-size:.78rem; } .hero { padding-top:36px; padding-bottom:34px; } h1 { font-size:2.5rem; } .lead { font-size:1.04rem; } .hero-answer { padding-left:15px; font-size:1.02rem; } .jump-links a { width:100%; text-align:center; } .two,.assessment-grid { grid-template-columns:1fr; } .quick-overview { gap:8px; } .metric { padding:17px 10px; border-radius:12px; } .metric strong { font-size:2rem; } .metric span { font-size:.76rem; } .section { padding-top:35px; padding-bottom:35px; } .panel,.assessment,.submission,.comparison { padding:22px 19px; } .strip-legend { grid-template-columns:repeat(2,minmax(0,1fr)); } .milestone { grid-template-columns:1fr; gap:12px; padding:24px 0; } .milestone-marker { display:flex; align-items:baseline; gap:15px; } .milestone-marker time { margin:0; } .connections { grid-template-columns:1fr; } .overview-band { padding:20px; } .deadline { padding:22px 20px; } .quiz-question { padding:17px 12px; } .nav-inner { padding-top:12px; padding-bottom:12px; } .nav-inner a { font-size:.82rem; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media print { @page { margin:15mm; } body { font-size:10.5pt; background:#fff; color:#111; } .wrap { max-width:none; padding:0; } .topbar,.sticky-nav,.jump-links,.js-only,.skip,.quiz-actions,.print-button { display:none !important; } .hero { background:white; color:#111; padding:0 0 16px; } .hero .eyebrow,.lead,.hero-answer strong { color:#222; } h1 { font-size:25pt; } h2 { font-size:19pt; } h3 { font-size:13pt; } .hero-answer { border-left:2px solid #444; margin-top:12px; } .section { padding:22px 0; } .assessment-grid,.two,.three { gap:12px; } .assessment,.panel,.submission,.doc-card,.question-area { padding:14px; break-inside:avoid; } .milestone { padding:16px 0; gap:15px; grid-template-columns:115px 1fr; break-inside:avoid; } .criterion-title { font-size:10pt; } .criteria p,.connections li,.meta,.path { font-size:9pt; } .quick-overview { margin-top:0; } .metric { padding:12px; } .metric strong { font-size:23pt; } .rating-strip { print-color-adjust:exact; -webkit-print-color-adjust:exact; } .tag { color:#111; background:white !important; border:1px solid #888; } details { break-inside:avoid; } details > div,details.self-answer > p { display:block !important; } summary { padding:10px 12px; } .footer { padding:15px 0; } a { color:#111; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Direkt zum Inhalt</a>
+<div class="topbar"><div class="wrap"><div class="brand">SCOTLAND PROJECT CHALLENGE <span>Englisch 10 · 2026/27 · Orientierung & Prozessbegleitung</span></div></div></div>
+<header class="hero" id="start"><div class="wrap">
+<p class="eyebrow">BUILD · TRACE · PRESENT · DEFEND</p>
+<h1>Was passiert eigentlich in der Schulaufgabe?</h1>
+<p class="lead">Du arbeitest mit deiner Gruppe an einem Produkt. Gleichzeitig bereitest du dich darauf vor, selbst auf Englisch zu erklären, was ihr herausgefunden habt und warum eure Aussagen und Entscheidungen sinnvoll sind.</p>
+<p class="hero-answer"><strong>Am 8. Dezember zeigst du zwei mündliche Leistungen:</strong> etwa <strong>3 Minuten PRESENT</strong> mit einer Stichwortkarte und etwa <strong>4 Minuten DEFEND</strong> ohne Notizen. Euer Produkt und deine dokumentierte Projektarbeit werden bereits nach der Abgabe <strong>vor</strong> der eigentlichen Schulaufgabe bewertet.</p>
+<div class="jump-links"><a href="#pruefung">Den Prüfungsablauf verstehen</a><a class="secondary" href="#projektweg">Warum machen wir diese Projektschritte?</a></div>
+</div></header>
+<nav class="sticky-nav" aria-label="Inhaltsübersicht"><div class="wrap nav-inner">
+<a href="#pruefung">1 · Schulaufgabe</a><a href="#bewertung">2 · Bewertung</a><a href="#defence">3 · DEFEND verstehen</a><a href="#projektweg">4 · Projektweg</a><a href="#dokumente">5 · Dokumente</a><a href="#abgabe">6 · Abgabe</a><a href="#vorbereitung">7 · Vorbereitung</a><a href="#selbstcheck">8 · Selbstcheck</a>
+</div></nav>
+<main class="wrap" id="inhalt">
+<div class="quick-overview" aria-label="Punkteübersicht">
+<div class="metric"><strong>60 <small>BE</small></strong><span>insgesamt</span></div>
+<div class="metric"><strong>9 <small>BE</small></strong><span>Gruppenleistung: BUILD</span></div>
+<div class="metric"><strong>51 <small>BE</small></strong><span>individuelle Leistungen</span></div>
+</div>
+<div class="overview-band"><p><strong>Wenn du nur drei Dinge mitnimmst:</strong></p><ol><li>Das Produkt allein ist noch nicht die gesamte Schulaufgabe.</li><li>Deine eigene Recherche, Dokumentation und dein eigenes Sprechen zählen.</li><li>Gute Vorbereitung heißt: Aussagen mit Belegen erklären, Entscheidungen begründen und auf Nachfragen reagieren können.</li></ol></div>
+
+<section class="section" id="pruefung" aria-labelledby="pruefung-title">
+<div class="section-head"><p class="section-index">01 · Der Ablauf</p><h2 id="pruefung-title">Was passiert wann?</h2><p>Die Bewertung verteilt sich auf die Zeit vor der Schulaufgabe und auf die mündliche Leistung am Prüfungstag. Du hältst am 8. Dezember also nicht einfach noch einmal euer fertiges Produkt vor die Klasse.</p></div>
+<div class="two schedule">
+<article class="panel"><p class="stage-heading"><span class="stage-number">1</span>30. November · Abgabe</p><h3>Die fertigen Fassungen abgeben</h3><p>Eure Gruppe gibt Produkt und gemeinsamen Source Log über <strong>BUILD – Final Submission</strong> ab. Du gibst deinen Individual Contribution Record separat über <strong>TRACE – Process Evidence</strong> ab.</p><p><strong>Digitale Abgabe: bis 23:59 Uhr.</strong> Für analoge Produkte gilt ebenfalls die rechtzeitige Abgabe spätestens am 30.11.; den Übergabeweg klärst du mit der Lehrkraft.</p></article>
+<article class="panel"><p class="stage-heading"><span class="stage-number">2</span>Nach der Abgabe · vor der Prüfung</p><h3>BUILD und TRACE werden bewertet</h3><p><strong>BUILD /9:</strong> die Gruppenleistung im abgegebenen Produkt.</p><p><strong>TRACE /9:</strong> deine dokumentierte Arbeit während des Projekts.</p><p>Du darfst dich weiter auf PRESENT und DEFEND vorbereiten. Die abgegebenen Fassungen werden nicht nachträglich verändert.</p></article>
+</div>
+<p class="stage-heading"><span class="stage-number">3</span>8. Dezember · live in der Schulaufgabe</p>
+<div class="two">
+<article class="panel exam-card" id="present-ablauf"><p class="eyebrow">PRESENT · 18 BE individuell</p><h3>Du erklärst zusammenhängend.<br><span class="time">Etwa 3 Minuten · kleine Stichwortkarte erlaubt</span></h3><ul><li>Was ist dein eigener inhaltlicher Schwerpunkt?</li><li>Was hast du herausgefunden?</li><li>Welche Belege sind dafür wichtig?</li><li>Wie hilft dein Beitrag, eure gemeinsame Leitfrage zu beantworten?</li><li>Welche wichtige Entscheidung musst du dafür erklären?</li></ul><p><strong>Dein Ziel:</strong> Die Zuhörer verstehen deine Erkenntnisse und ihre Bedeutung.</p><p class="small">Die Stichwortkarte enthält Schlüsselwörter. Ein ausformulierter Text zum Ablesen passt nicht zu dieser Aufgabe.</p></article>
+<article class="panel exam-card defence" id="defend-ablauf"><p class="eyebrow">DEFEND · 24 BE individuell</p><h3>Du reagierst auf Fragen.<br><span class="time">Etwa 4 Minuten · keine Notizen</span></h3><ul><li>Du hörst auf die tatsächlich gestellte Frage.</li><li>Du erklärst oder begründest deine Antwort.</li><li>Du greifst bei Bedarf auf konkrete Belege zurück.</li><li>Du reagierst auf Nachfragen und neue Perspektiven.</li><li>Du erkennst, wenn eine Aussage Grenzen hat.</li></ul><p><strong>Dein Ziel:</strong> Du zeigst, dass du euer Thema und eure Belege selbst verstehst.</p><p class="small">Die Fragebereiche sind bekannt. Die konkreten Prüfungsfragen kennst du vorher nicht.</p></article>
+</div>
+<div class="callout"><p><strong>Für jede Person:</strong> ungefähr 3 Minuten Präsentation plus 4 Minuten Prüfungsgespräch. Die genaue Organisation innerhalb eurer Prüfungsgruppe erklärt die Lehrkraft.</p></div>
+<div class="comparison"><h3>Produkt ≠ Präsentation</h3><div class="two"><div><h4>Beispiel: Eure Gruppe erstellt einen Podcast.</h4><p>Der fertige Podcast ist euer <strong>BUILD-Produkt</strong>. Er wird vor der Schulaufgabe bewertet.</p></div><div><h4>Dein mündlicher Prüfungsanteil</h4><p>In <strong>PRESENT</strong> erklärst du selbst wichtige Erkenntnisse und Belege. In <strong>DEFEND</strong> beantwortest du dazu Fragen. Das Abspielen des Podcasts ersetzt beides nicht.</p></div></div></div>
+</section>
+
+<section class="section" id="bewertung" aria-labelledby="bewertung-title">
+<div class="section-head"><p class="section-index">02 · Die vier Bausteine</p><h2 id="bewertung-title">Wofür gibt es die 60 BE?</h2><p>BE bedeutet Bewertungseinheiten. Nur BUILD ist eine Gruppenleistung. TRACE, PRESENT und DEFEND sind individuell. 42 der 60 BE entstehen durch dein Sprechen in der Schulaufgabe.</p></div>
+<div class="rating-strip" role="img" aria-label="Verteilung von 60 BE: BUILD 9, TRACE 9, PRESENT 18, DEFEND 24."><span></span><span></span><span></span><span></span></div>
+<div class="strip-legend"><div><strong>BUILD · 9 BE</strong><span>15 % · Gruppe</span></div><div><strong>TRACE · 9 BE</strong><span>15 % · individuell</span></div><div><strong>PRESENT · 18 BE</strong><span>30 % · individuell</span></div><div><strong>DEFEND · 24 BE</strong><span>40 % · individuell</span></div></div>
+<div class="assessment-grid"><article class="assessment build" id="build-kriterien">
+      <div class="part-top"><span class="part-name">BUILD</span><span class="points">9 <small>BE</small></span></div>
+      <p class="meta">Gruppe · Vor der Schulaufgabe</p><h3>Euer fertiges Produkt</h3><p>Ihr erstellt gemeinsam ein englischsprachiges Produkt für eine klar bestimmte Zielgruppe. Es beantwortet eure Leitfrage mit passenden Inhalten und geeigneten Quellen.</p>
+      <ul class="criteria"><li><div class="criterion-title"><strong>CONTENT</strong><span>/3 BE</span></div><p>Sind die Inhalte fachlich richtig, relevant und auf Leitfrage und Zielgruppe ausgerichtet?</p></li><li><div class="criterion-title"><strong>SOURCES</strong><span>/3 BE</span></div><p>Sind geeignete externe Quellen sinnvoll ausgewählt, verarbeitet und nachvollziehbar belegt?</p></li><li><div class="criterion-title"><strong>LANGUAGE</strong><span>/3 BE</span></div><p>Ist das Englisch klar und passend zu Zielgruppe, Zweck und Produkt?</p></li></ul>
+      <p class="label">Woran wird die Leistung sichtbar?</p><p>Das gemeinsam abgegebene Produkt; der gemeinsame Source Log macht eure Quellenarbeit nachvollziehbar.</p>
+      <p class="label">Dein nächster sinnvoller Schritt</p><p>Arbeite an einem gehaltvollen eigenen Inhaltsbeitrag. Prüft in der Gruppe, ob das Produkt eure Leitfrage wirklich beantwortet.</p>
+      <p class="boundary">BUILD ist der einzige Gruppenanteil: 9 BE. Aufwendige Technik oder schönes Design bringen für sich allein keine zusätzlichen Punkte.</p>
+    </article><article class="assessment trace" id="trace-kriterien">
+      <div class="part-top"><span class="part-name">TRACE</span><span class="points">9 <small>BE</small></span></div>
+      <p class="meta">Individuell · Vor der Schulaufgabe</p><h3>Deine dokumentierte Projektarbeit</h3><p>Deine eigene Arbeit während des Projekts muss sichtbar werden: was du beigetragen, selbst recherchiert und nach Rückmeldungen weiterentwickelt hast.</p>
+      <ul class="criteria"><li><div class="criterion-title"><strong>CONTRIBUTION</strong><span>/3 BE</span></div><p>Wird ein substanzieller eigener Beitrag und zuverlässiges Arbeiten im Projektverlauf sichtbar?</p></li><li><div class="criterion-title"><strong>RESEARCH</strong><span>/3 BE</span></div><p>Ist deine eigenständige Recherche mit geeigneten, eingeschätzten Quellen nachvollziehbar?</p></li><li><div class="criterion-title"><strong>DEVELOPMENT</strong><span>/3 BE</span></div><p>Zeigst du sinnvolle Überarbeitung und den Umgang mit Feedback? Ist substanzielle KI-Unterstützung transparent dokumentiert?</p></li></ul>
+      <p class="label">Woran wird die Leistung sichtbar?</p><p>Dein persönlicher Individual Contribution Record. Dazu gehören auch Language Bank und gegebenenfalls AI Footprint.</p>
+      <p class="label">Dein nächster sinnvoller Schritt</p><p>Halte wichtige Arbeitsschritte zeitnah und konkret fest. Zeige auch, was du nach Feedback geändert hast und warum.</p>
+      <p class="boundary">TRACE wird anhand deiner dokumentierten Projektarbeit bewertet. Eine gute mündliche Antwort in DEFEND ersetzt fehlende Prozessnachweise nicht.</p>
+    </article><article class="assessment present" id="present-kriterien">
+      <div class="part-top"><span class="part-name">PRESENT</span><span class="points">18 <small>BE</small></span></div>
+      <p class="meta">Individuell · Live in der Schulaufgabe</p><h3>Deine individuelle Präsentation</h3><p>Du erklärst in etwa drei Minuten deine eigenen Erkenntnisse, wichtige Belege und Entscheidungen. Dein Anteil muss erkennbar zur gemeinsamen Leitfrage beitragen.</p>
+      <ul class="criteria"><li><div class="criterion-title"><strong>CONTENT</strong><span>/6 BE</span></div><p>Sind deine Inhalte relevant, fachlich nachvollziehbar und klar gegliedert?</p></li><li><div class="criterion-title"><strong>DELIVERY</strong><span>/6 BE</span></div><p>Vermittelst du sie verständlich, sicher und mit Blick auf deine Zuhörer?</p></li><li><div class="criterion-title"><strong>LANGUAGE</strong><span>/6 BE</span></div><p>Verwendest du passendes, ausreichend vielfältiges und überwiegend korrektes Englisch?</p></li></ul>
+      <p class="label">Woran wird die Leistung sichtbar?</p><p>Dein eigener zusammenhängender Vortrag in der Prüfung. Eine kleine Karte mit Stichwörtern ist erlaubt.</p>
+      <p class="label">Dein nächster sinnvoller Schritt</p><p>Übe, Erkenntnisse mit Belegen zu erklären. Reduziere deine Notizen auf Schlüsselwörter und prüfe die ungefähre Dauer.</p>
+      <p class="boundary">Das abgegebene Produkt und die Präsentation sind zwei unterschiedliche Leistungen. Das vollständige Video abzuspielen oder einen Magazintext vorzulesen ersetzt deinen Vortrag nicht.</p>
+    </article><article class="assessment defend" id="defend-kriterien">
+      <div class="part-top"><span class="part-name">DEFEND</span><span class="points">24 <small>BE</small></span></div>
+      <p class="meta">Individuell · Live in der Schulaufgabe</p><h3>Dein spontanes Prüfungsgespräch</h3><p>Du beantwortest ungefähr vier Minuten lang Fragen und Nachfragen zu eurem Thema, zu begründeten Entscheidungen und zu neuen Perspektiven. Dabei benutzt du keine Notizen.</p>
+      <ul class="criteria"><li><div class="criterion-title"><strong>INTERACTION</strong><span>/8 BE</span></div><p>Gehst du auf die tatsächliche Frage ein und reagierst du auf Nachfragen?</p></li><li><div class="criterion-title"><strong>UNDERSTANDING</strong><span>/8 BE</span></div><p>Kannst du erklären, begründen, Zusammenhänge herstellen und Grenzen deiner Aussagen erkennen?</p></li><li><div class="criterion-title"><strong>LANGUAGE</strong><span>/8 BE</span></div><p>Kannst du deine Gedanken im spontanen Gespräch klar und angemessen auf Englisch ausdrücken?</p></li></ul>
+      <p class="label">Woran wird die Leistung sichtbar?</p><p>Ausschließlich deine spontane mündliche Leistung in diesem Prüfungsteil.</p>
+      <p class="label">Dein nächster sinnvoller Schritt</p><p>Lass dir zu deinen Ergebnissen echte Nachfragen stellen. Erkläre auch Belege, Grenzen und mögliche andere Sichtweisen.</p>
+      <p class="boundary">Du kennst die drei Fragebereiche, aber nicht die konkreten Prüfungsfragen. Auswendig gelernte Antworten sind deshalb keine verlässliche Vorbereitung.</p>
+    </article></div>
+<div class="comparison" id="trace-defend"><h3>TRACE und DEFEND: zwei verschiedene Leistungen</h3><div class="two"><div><p class="label">TRACE · Dokumentierte Arbeit</p><p>Was hast du während des Projekts recherchiert, beigetragen und überarbeitet? Deine Aufzeichnungen machen diese Arbeit nachvollziehbar.</p></div><div><p class="label">DEFEND · Spontane Prüfungsleistung</p><p>Kannst du jetzt eine Frage verstehen, Zusammenhänge erklären und begründet antworten? Es zählt deine mündliche Leistung im Gespräch.</p></div></div><p class="boundary">Eine Entscheidung darf in beiden Zusammenhängen vorkommen: In TRACE wird ihre dokumentierte Entwicklung sichtbar; in DEFEND zählt, wie gut du sie spontan erklären und begründen kannst. Die Prozessdokumentation wird im Gespräch nicht erneut bewertet.</p></div>
+</section>
+
+<section class="section" id="defence" aria-labelledby="defence-title">
+<div class="section-head"><p class="section-index">03 · Den größten Prüfungsanteil verstehen</p><h2 id="defence-title">Was bedeutet „Defence“?</h2><p>Du musst dein Thema im Gespräch fachlich vertreten können: erklären, warum eine Aussage sinnvoll ist, worauf sie beruht und wie weit sie trägt. Die folgenden Fragen sind erfundene Übungsbeispiele, keine Originalprüfungsfragen.</p></div>
+<div class="three">
+<article class="question-area"><p class="english">TOPIC UNDERSTANDING</p><h3>Das Thema verstehen</h3><p>Du erklärst wichtige Erkenntnisse und Zusammenhänge. Bei Zahlen weißt du, was gemessen wird. Du unterscheidest beispielsweise eine politische Zielsetzung von einem bereits erreichten Ergebnis.</p><p class="practice-question" lang="en">“What is one important finding from your research, and what evidence supports it?”</p></article>
+<article class="question-area"><p class="english">DECISIONS & REASONING</p><h3>Entscheidungen begründen</h3><p>Du erläuterst inhaltliche Entscheidungen: Warum habt ihr eine Perspektive aufgenommen, eine Quelle verwendet oder bestimmte Informationen für eure Zielgruppe erklärt?</p><p class="practice-question" lang="en">“Why was this perspective important for answering your guiding question?”</p></article>
+<article class="question-area"><p class="english">TRANSFER & EVALUATION</p><h3>Übertragen und abwägen</h3><p>Du nutzt dein Wissen für eine neue Frage oder Sichtweise. Du erkennst mögliche Vor- und Nachteile, Einschränkungen oder andere begründete Urteile.</p><p class="practice-question" lang="en">“How might another group of people view this issue differently?”</p></article>
+</div>
+<div class="callout warning"><p><strong>Eine vollständige Quellenliste ist noch keine inhaltliche Antwort.</strong> Wenn nach einer Erkenntnis gefragt wird, reicht „We used four sources and made a video“ nicht. Erkläre, was ihr herausgefunden habt, worauf die Aussage beruht und gegebenenfalls, was offenbleibt.</p></div>
+<div class="example"><p class="label">Einfacher Denkweg für eine Antwort</p><p><strong>Auf die Frage eingehen → erklären oder begründen → bei Bedarf einen Beleg oder ein Beispiel nennen.</strong> Das ist eine Hilfe beim Denken, kein festes Antwortskript.</p><p>Wenn du eine Frage sprachlich nicht verstehst, kannst du um Wiederholung oder Umformulierung bitten. Erfinde keine Fakten, um eine Wissenslücke zu verdecken.</p></div>
+</section>
+
+<section class="section" id="projektweg" aria-labelledby="projektweg-title">
+<div class="section-head"><p class="section-index">04 · Die Schritte hängen zusammen</p><h2 id="projektweg-title">Wozu dienen M0, M1, M2 und M3?</h2><p>Die Meilensteine helfen euch, ein gutes Produkt zu entwickeln und deine eigenen Leistungen rechtzeitig aufzubauen. Sie sind keine zusätzlichen Teile einer zweiten Prüfung und bringen keine weiteren BE neben den festgelegten 60.</p></div>
+<div class="overview-band"><p><strong>Der Arbeitsprozess läuft nicht streng nacheinander:</strong> recherchieren → entscheiden → bauen → testen → verbessern. Du darfst mit der Umsetzung beginnen, während ihr noch gezielt weiterrecherchiert.</p></div>
+<div class="milestones"><article class="milestone"><div class="milestone-marker"><span>Launch</span><time>08.10.2026</time></div><div><h3>Das Projekt verstehen</h3><p class="label">Was ihr tut</p><p>Ihr lernt Auftrag, Produktmöglichkeiten, Bewertung und Termine kennen. Erste Themenideen dürfen noch offen sein.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Du weißt von Anfang an, dass neben dem Gruppenprodukt auch deine dokumentierte Arbeit und dein eigenes Sprechen zählen.</p><ul class="connections"><li><span class="tag build">BUILD</span><span>Ziel des Produkts verstehen</span></li><li><span class="tag present">PRESENT</span><span>Deinen späteren Erkläranteil mitdenken</span></li><li><span class="tag defend">DEFEND</span><span>Verständnis statt bloßes Sammeln einplanen</span></li></ul></div></article><article class="milestone"><div class="milestone-marker"><span>M0</span><time>15.10.2026</time></div><div><h3>Orientierung: Aus Interesse wird eine Richtung</h3><p class="label">Was ihr tut</p><p>Ihr entwickelt eine mögliche Leitfrage, eine Zielgruppe, eine Produktidee und erste Rechercherichtungen. Noch nicht jede Entscheidung muss endgültig sein.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Eine brauchbare Leitfrage hilft dir später, Wichtiges auszuwählen und zu erklären, worauf euer Projekt eine Antwort gibt.</p><ul class="connections"><li><span class="tag build">BUILD</span><span>Inhaltliche Richtung festlegen</span></li><li><span class="tag trace">TRACE</span><span>Eigene Ideen und erste Arbeit sichtbar machen</span></li><li><span class="tag defend">DEFEND</span><span>Frage und Ziel erklären können</span></li></ul></div></article><article class="milestone"><div class="milestone-marker"><span>M1</span><time>29.10.2026</time></div><div><h3>Project Proposal: Planung wird verbindlicher</h3><p class="label">Was ihr tut</p><p>Leitfrage, Zielgruppe, Produkt, 3–5 Kernaussagen, Verbindungen zu mindestens zwei Kursbereichen und persönliche Verantwortlichkeiten werden klar. Euer Product Blueprint zeigt den geplanten Aufbau.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Du kannst begründen, welche Inhalte ihr auswählt, wie sie zusammenpassen und warum euer Produkt zur Zielgruppe passt. Ihr könnt gezielt produzieren und parallel weiterrecherchieren.</p><ul class="connections"><li><span class="tag build">BUILD</span><span>Tragfähigen Aufbau und Inhalt planen</span></li><li><span class="tag trace">TRACE</span><span>Persönlichen Arbeits- und Recherchefokus festhalten</span></li><li><span class="tag present">PRESENT</span><span>Eigenen Inhaltsfokus erkennen</span></li><li><span class="tag defend">DEFEND</span><span>Entscheidungen begründen lernen</span></li></ul></div></article><article class="milestone"><div class="milestone-marker"><span>M2</span><time>19.11.2026</time></div><div><h3>Evidence & Product Check: Belege und erste Umsetzung</h3><p class="label">Was ihr tut</p><p>Ihr zeigt geeignete Recherche, einen aktualisierten Source Log, erkennbare individuelle Recherchebeiträge und erste sichtbare Teile des Produkts.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Du kannst Aussagen mit konkreten Belegen verbinden und erkennst rechtzeitig, was noch unklar, einseitig oder nicht ausreichend gestützt ist.</p><ul class="connections"><li><span class="tag build">BUILD</span><span>Inhalte und Quellen prüfen</span></li><li><span class="tag trace">TRACE</span><span>Eigenständige Recherche belegen</span></li><li><span class="tag present">PRESENT</span><span>Wichtige Belege auswählen</span></li><li><span class="tag defend">DEFEND</span><span>Aussagen erklären und begrenzen können</span></li></ul></div></article><article class="milestone"><div class="milestone-marker"><span>M3</span><time>26.11.2026</time></div><div><h3>Prototype & Rehearsal: Testen und verbessern</h3><p class="label">Was ihr tut</p><p>Das Produkt ist ungefähr zu 80–90 % fertig. Ihr probt die Präsentation, bekommt Feedback und legt die letzten Verbesserungen fest.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Du merkst vor der Prüfung, ob du verständlich erklären kannst, welche Belege du wirklich verstehst und wo du noch nacharbeiten musst.</p><ul class="connections"><li><span class="tag build">BUILD</span><span>Produkt anhand von Feedback verbessern</span></li><li><span class="tag trace">TRACE</span><span>Entwicklung nachvollziehbar machen</span></li><li><span class="tag present">PRESENT</span><span>Aufbau, Sprache und Vortrag erproben</span></li><li><span class="tag defend">DEFEND</span><span>Mit spontanen Nachfragen Lücken finden</span></li></ul></div></article><article class="milestone"><div class="milestone-marker"><span>Submission</span><time>30.11.2026</time></div><div><h3>Zwei Abgaben abschließen</h3><p class="label">Was ihr tut</p><p>Bis 23:59 Uhr gibst du TRACE individuell ab; eure Gruppe erledigt BUILD einschließlich Source Log. Analoge Produkte müssen ebenfalls pünktlich, spätestens am 30.11., bei der Lehrkraft abgegeben werden.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Die abgegebenen Fassungen stehen fest. BUILD und TRACE werden danach vor der Schulaufgabe bewertet. Für PRESENT und DEFEND darfst du weiterüben.</p><ul class="connections"><li><span class="tag build">BUILD</span><span>Gruppenprodukt final abgeben</span></li><li><span class="tag trace">TRACE</span><span>Eigenen Nachweis final abgeben</span></li><li><span class="tag present">PRESENT</span><span>Prüfungsvorbereitung fortsetzen</span></li><li><span class="tag defend">DEFEND</span><span>Verständnis weiter festigen</span></li></ul></div></article><article class="milestone"><div class="milestone-marker"><span>Project Exam</span><time>08.12.2026</time></div><div><h3>Eigenes Können live zeigen</h3><p class="label">Was ihr tut</p><p>Du präsentierst etwa drei Minuten mit einer Stichwortkarte und beantwortest anschließend ungefähr vier Minuten lang Fragen ohne Notizen. Die genaue Organisation der Prüfungsgruppe erklärt die Lehrkraft.</p><p class="label">Was dir das für die Schulaufgabe bringt</p><p>Jetzt zählt, was du selbst in der Präsentation und im Gespräch zeigen kannst. Die Produkt- und Prozessbewertung wird dabei nicht noch einmal durchgeführt.</p><ul class="connections"><li><span class="tag present">PRESENT</span><span>18 BE individuell</span></li><li><span class="tag defend">DEFEND</span><span>24 BE individuell</span></li></ul></div></article></div>
+<div class="callout"><p><strong>Die Meilensteine sind Wegmarken, keine zusätzliche Abgabemappe.</strong> Nutze die vorgesehenen Arbeitsseiten und halte deinen eigenen Beitrag im Individual Contribution Record fest. Die finale Abgabe erfolgt über BUILD und TRACE.</p></div>
+</section>
+
+<section class="section" id="quellen" aria-labelledby="quellen-title">
+<div class="section-head"><p class="section-index">Vom Arbeitsschritt zum Prüfungskönnen</p><h2 id="quellen-title">Was du in einer Projektstunde wirklich aufbaust</h2><p>Die Kursinhalte zu Schottland geben euch Hintergrundwissen und sprachliche Mittel. Eigene Recherche hilft euch, die Leitfrage differenziert zu beantworten. Das Produkt bringt eure Erkenntnisse in eine sinnvolle Form.</p></div>
+<ol class="process-steps">
+<li><h3>Eine passende Frage eingrenzen</h3><p>Überlege, was eure Zielgruppe am Ende verstanden haben soll. Ein Thema wie „Scotland“ ist noch keine Leitfrage.</p><p class="why"><strong>Für die Prüfung:</strong> Du kannst den roten Faden nennen und erklären, warum eine Information wichtig ist.</p></li>
+<li><h3>Selbst recherchieren und eine Quelle prüfen</h3><p>Finde Informationen zu deinem Schwerpunkt. Prüfe Herausgeber, Zweck, Belege, Aktualität und mögliche Einschränkungen. Ein bekannter Herausgeber allein garantiert nicht, dass die Quelle deine konkrete Aussage stützt.</p><p class="why"><strong>Für die Prüfung:</strong> Du kannst Belege erklären und begründen, warum ihr bestimmte Informationen verwendet.</p></li>
+<li><h3>Eine Aussage genau mit dem Beleg abgleichen</h3><p>Unterscheide zum Beispiel „könnte“ von „wird“, eine Höchstzahl von einer exakten Zahl und einen Zukunftsplan von einem tatsächlichen Ergebnis.</p><p class="why"><strong>Für die Prüfung:</strong> Du kannst Aussagen präzise formulieren und ihre Grenzen erläutern.</p></li>
+<li><h3>Die Ergebnisse in der Gruppe zusammenführen</h3><p>Erkläre deine Recherche den anderen. Vergleicht Perspektiven und entscheidet, welche Belege welche Kernaussage tragen. Es reicht nicht, wenn jede Person nur ihren isolierten Teil kennt.</p><p class="why"><strong>Für die Prüfung:</strong> Jede Person versteht die Leitfrage, die wichtigsten gemeinsamen Erkenntnisse und die zentralen Projektentscheidungen – mit einem klaren eigenen Schwerpunkt.</p></li>
+<li><h3>Für die Zielgruppe auswählen und gestalten</h3><p>Verarbeitet Informationen in eigenen Worten. Baut einen verständlichen Zusammenhang auf und prüft, welche Begriffe oder kulturellen Hintergründe erklärt werden müssen.</p><p class="why"><strong>Für die Prüfung:</strong> Du kannst zeigen, was die Inhalte bedeuten, und erklären, warum eure Darstellung sinnvoll ist.</p></li>
+<li><h3>Feedback nutzen und selbst sprechen</h3><p>Teste das Produkt und deinen Vortrag. Lass dir Nachfragen stellen. Halte wichtige Überarbeitungen und ihre Gründe fest.</p><p class="why"><strong>Für die Prüfung:</strong> Deine Entwicklung wird in TRACE sichtbar. PRESENT und DEFEND werden durch eigenes Erklären und Reagieren sicherer.</p></li>
+</ol>
+<div class="panel"><h3>Die Quellenregeln im Überblick</h3><ul><li><strong>Mindestens vier geeignete externe Quellen pro Gruppe.</strong> Überwiegend sollen sie englischsprachig sein.</li><li>Jede Person recherchiert mindestens eine Quelle selbst und macht ihren eigenen Forschungs- und Inhaltsbeitrag erkennbar.</li><li>Das Lehrbuch kann Hintergrundwissen liefern; es zählt nicht als eine der vier externen Quellen.</li><li>Eine geeignete deutsche Quelle ist möglich, wenn sie inhaltlich hilft. Sie ist nicht verpflichtend.</li><li>Es gibt keine verpflichtende Mediation als zusätzlichen Projekt- oder Prüfungsteil.</li><li>Das Projekt verbindet Inhalte aus mindestens zwei geeigneten Bereichen der Scotland-Unterrichtseinheit.</li></ul></div>
+</section>
+
+<section class="section" id="dokumente" aria-labelledby="dokumente-title">
+<div class="section-head"><p class="section-index">05 · Die Ablage verstehen</p><h2 id="dokumente-title">Was gehört wohin – und wozu?</h2><p>Produkt, Source Log und Individual Contribution Record haben unterschiedliche Aufgaben. Die folgenden Namen helfen dir, die richtigen Seiten und Abgaben wiederzufinden.</p></div>
+<div class="three">
+<article class="doc-card"><p class="eyebrow">Gemeinsam · Quellen nachvollziehen</p><h3>Source Log</h3><p>Eine gemeinsame Übersicht über die Quellen, die ihr tatsächlich verwendet.</p><p class="label">Wo arbeitet ihr?</p><p class="path">Euer Gruppen-Notizbuch → Source Log → Source Log</p><p class="label">Was wird festgehalten?</p><p>Herausgeber oder Autor, Titel und Sprache, URL und Abrufdatum, Verwendung im Projekt und eine begründete Einschätzung der Quelle.</p><p class="label">Finale Abgabe</p><p>Als PDF mit der Gruppenabgabe <strong>BUILD – Final Submission</strong>.</p><p class="boundary">Hilft bei verantwortlicher Quellenarbeit und beim Wiederfinden von Belegen. Du musst die Inhalte zusätzlich selbst verstehen.</p></article>
+<article class="doc-card"><p class="eyebrow">Persönlich · Arbeit sichtbar machen</p><h3>Individual Contribution Record</h3><p>Dein eigener Nachweis über Recherche, Inhaltsbeitrag und Weiterentwicklung.</p><p class="label">Wo arbeitest du?</p><p class="path">Dein persönlicher Schülerbereich → 01_Unit 1 - Scotland → 5_TRACE – Process Evidence</p><p class="label">Was gehört dazu?</p><p>Eigene Recherche, verantwortete Inhalte, Entwicklung und Feedback, Präsentationsfokus, <strong>Language Bank mit 8–10 Ausdrücken</strong> sowie gegebenenfalls der AI Footprint.</p><p class="label">Finale Abgabe</p><p>Die zugewiesene OneNote-Seite über <strong>TRACE – Process Evidence</strong> abgeben. Dafür ist kein zusätzlicher PDF-Export vorgesehen.</p></article>
+<article class="doc-card"><p class="eyebrow">Gemeinsam · Erkenntnisse vermitteln</p><h3>Final Product</h3><p>Euer fertiges englischsprachiges Produkt für eure festgelegte Zielgruppe.</p><p class="label">Was muss erkennbar sein?</p><p>Leitfrage, sinnvolle Inhalte, passende Quellenverarbeitung und die individuellen Inhaltsbeiträge.</p><p class="label">Mögliche Formate</p><p>Zum Beispiel Podcast, Mini-Dokumentation, Magazin oder Guide, Ausstellung oder Lernspiel. Andere Formate klärt ihr mit der Lehrkraft.</p><p class="label">Finale Abgabe</p><p>Geeignete Datei oder ein zugänglicher Link über <strong>BUILD – Final Submission</strong>; für analoge Produkte zusätzlich die rechtzeitige Übergabe.</p></article>
+</div>
+<div class="callout"><p><strong>Weniger Sucherei:</strong> Die Projektaufträge und Erklärungen findest du bei <strong>4_Scotland Project</strong>. Deinen persönlichen Prozessnachweis führst du bei <strong>5_TRACE – Process Evidence</strong>. Der gemeinsame Source Log liegt im <strong>Gruppen-Notizbuch</strong>.</p></div>
+<details><summary>Was macht eine hilfreiche Prozessnotiz aus?</summary><div><p>Halte knapp fest, <strong>was du gemacht hast</strong>, <strong>welches Ergebnis daraus entstanden ist</strong> und bei einer Überarbeitung <strong>was sich warum geändert hat</strong>. Notiere wichtige Schritte zeitnah.</p><p>„Ich habe gearbeitet“ macht deinen Beitrag kaum nachvollziehbar. Ein konkreter Recherchefokus, die verwendete Quelle, dein eigener Inhaltsbeitrag oder eine begründete Überarbeitung zeigen deutlich mehr.</p><p>Schreibe deine tatsächliche Arbeit auf. Umfangreiche Texte sind kein Selbstzweck.</p></div></details>
+</section>
+
+<section class="section" id="abgabe" aria-labelledby="abgabe-title">
+<div class="section-head"><p class="section-index">06 · Zwei getrennte Abgaben</p><h2 id="abgabe-title">Was muss am Ende erledigt sein?</h2><p>Die Gruppenabgabe und deine persönliche Abgabe sind zwei verschiedene Aufgaben in Teams. Kontrolliere beide.</p></div>
+<div class="deadline"><p>Digitale Submission · deutsche Ortszeit</p><strong>Montag, 30. November 2026 · 23:59 Uhr</strong><p>Analoge Produkte ebenfalls rechtzeitig, spätestens am 30.11., bei der Lehrkraft abgeben.</p></div>
+<div class="two">
+<article class="submission build"><p class="eyebrow">Gruppe</p><h3>BUILD – Final Submission</h3><ol><li>Finales Produkt als passende Datei oder vereinbarter zugänglicher Link bereitstellen.</li><li>Gemeinsamen Source Log als PDF ergänzen.</li><li>Prüfen, ob alles vollständig ist und die Lehrkraft auf verlinkte Inhalte zugreifen kann.</li><li>Die Gruppenabgabe in Teams tatsächlich abgeben.</li></ol><p><strong>Bei großen Dateien oder technischen Bedenken:</strong> Sprecht frühzeitig mit der Lehrkraft. Als vereinbarter Weg können Dateien im Gruppenkanal liegen und über eine kleine PDF mit Zugangslink eingereicht werden.</p><p><strong>Analoges Produkt:</strong> Die digitale Aufgabenabgabe ersetzt nicht die pünktliche Übergabe des Produkts.</p></article>
+<article class="submission trace"><p class="eyebrow">Jede Person</p><h3>TRACE – Process Evidence</h3><ol><li>Den eigenen Individual Contribution Record vervollständigen.</li><li>Eigene Recherche, Beitrag und Entwicklung nachvollziehbar machen.</li><li>Language Bank und gegebenenfalls AI Footprint prüfen.</li><li>Die zugewiesene OneNote-Seite über die persönliche Teams-Aufgabe abgeben.</li></ol><p><strong>Keine zusätzliche PDF nötig.</strong> Es geht um deine zugewiesene persönliche Seite.</p><p><strong>Beide Aufgaben gehören dazu:</strong> Wenn deine Gruppe BUILD abgibt, ist deine persönliche TRACE-Abgabe dadurch noch nicht erledigt.</p></article>
+</div>
+<div class="callout warning"><p><strong>Nach dem Abgabetermin:</strong> Abgegebene Produkte und Prozessnachweise bleiben unverändert. Du darfst deinen Vortrag, deine Stichwortkarte und dein spontanes Antworten weiter vorbereiten und deine Quellen für die Prüfung noch einmal durchgehen.</p></div>
+</section>
+
+<section class="section" id="vorbereitung" aria-labelledby="vorbereitung-title">
+<div class="section-head"><p class="section-index">07 · Sinnvoll vorbereiten</p><h2 id="vorbereitung-title">Was solltest du selbst können?</h2><p>Das Ziel ist ein eigener, verständlicher Vortrag und ein echtes Gespräch. Du brauchst dafür belastbare Erkenntnisse, passende Sprache und Übung im Erklären.</p></div>
+<div class="two"><article class="panel"><h3>Für PRESENT</h3><ol><li>Lege deinen eigenen inhaltlichen Fokus fest.</li><li>Wähle die wichtigsten Erkenntnisse und Belege aus.</li><li>Zeige den Zusammenhang mit der gemeinsamen Leitfrage.</li><li>Gliedere deinen Vortrag und arbeite mit Stichwörtern.</li><li>Übe laut, ungefähr drei Minuten lang. Nutze Rückmeldungen zu Verständlichkeit, Aufbau und Vortrag.</li></ol></article><article class="panel"><h3>Für DEFEND</h3><ol><li>Erkläre eine Erkenntnis mit eigenen Worten.</li><li>Prüfe, ob du den zugehörigen Beleg wirklich verstehst.</li><li>Begründe eine wichtige inhaltliche oder gestalterische Entscheidung.</li><li>Lass dir ohne Vorbereitung eine Nachfrage stellen.</li><li>Überlege, welche Grenzen, anderen Perspektiven oder neuen Situationen relevant sind.</li></ol></article></div>
+<div class="two" style="margin-top:22px"><article class="panel"><p class="eyebrow">Hilfe im Projekt</p><h3>Scotland Project Coach</h3><p>Hilft dir bei Leitfrage, Recherchewegen, Quellenverständnis und Feedback auf eigene Texte. Bringe deine eigene Idee oder deinen Versuch mit.</p><p>Für einen Quellencheck: kurze relevante Textstelle plus deine eigene Einschätzung. Ein Link allein genügt nicht.</p></article><article class="panel"><p class="eyebrow">Hilfe beim Sprechen</p><h3>Scotland Exam Trainer</h3><p>Trainiert PRESENT, DEFEND oder eine vollständige Simulation anhand deines eigenen Projekts. Nutze möglichst das Mikrofon.</p><p>Er kann auf Inhalt und Formulierungen eingehen. Aus einer Transkription kann er Aussprache, Blickkontakt oder dein tatsächliches Vortragsverhalten nicht zuverlässig beurteilen.</p></article></div>
+<div class="callout"><p><strong>KI unterstützt deine Arbeit.</strong> Sie schreibt keine fertigen Produktteile, Präsentationsskripte oder auswendig zu lernenden Antworten für dich. Substanzielle Unterstützung dokumentierst du transparent im <strong>AI Footprint deines Individual Contribution Record</strong>. Ohne substanzielle Nutzung: <span lang="en">“No substantial AI use.”</span> Es gibt dafür keine zusätzliche AI-Footprint-Datei.</p></div>
+<div class="panel readiness"><h3>Dein persönlicher Bereitschaftscheck</h3><p>Hake für dich ab, was du bereits kannst. Das ist eine Orientierung, keine weitere Abgabe.</p><ul class="focus-list">
+<li><label><input type="checkbox"><span>Ich kann unsere Leitfrage und Zielgruppe erklären.</span></label></li>
+<li><label><input type="checkbox"><span>Ich kenne die wichtigsten gemeinsamen Erkenntnisse und meinen eigenen Inhaltsbeitrag.</span></label></li>
+<li><label><input type="checkbox"><span>Ich kann zu meinem Schwerpunkt geeignete Belege erklären und ihre Grenzen benennen.</span></label></li>
+<li><label><input type="checkbox"><span>Mein eigener Beitrag und meine Recherche werden im Individual Contribution Record sichtbar.</span></label></li>
+<li><label><input type="checkbox"><span>Ich habe Feedback genutzt und wichtige Änderungen nachvollziehbar festgehalten.</span></label></li>
+<li><label><input type="checkbox"><span>Ich kann meinen Präsentationsanteil mit einer Stichwortkarte verständlich vortragen.</span></label></li>
+<li><label><input type="checkbox"><span>Ich habe spontane Nachfragen ohne Notizen geübt.</span></label></li>
+<li><label><input type="checkbox"><span>Ich weiß, was meine Gruppe über BUILD und was ich selbst über TRACE abgebe.</span></label></li>
+</ul><p class="small" style="margin-top:16px">Die Häkchen werden nicht dauerhaft gespeichert und nicht an die Lehrkraft übermittelt.</p></div>
+<details><summary>Ich verliere gerade den Überblick. Was ist mein nächster Schritt?</summary><div><ol><li><strong>Leitfrage ansehen:</strong> Welche konkrete Frage soll euer Produkt beantworten?</li><li><strong>Eigene Verantwortung klären:</strong> Welchen inhaltlichen Teil und welche Recherche übernimmst du?</li><li><strong>Eine Lücke auswählen:</strong> Fehlt ein Beleg, eine Erklärung, eine Produktstelle oder eine nachvollziehbare Prozessnotiz?</li><li><strong>Eine überschaubare Aufgabe erledigen</strong> und das Ergebnis mit der Gruppe teilen.</li></ol><p>Wenn unklar ist, was von dir erwartet wird, kläre das frühzeitig mit der Gruppe oder der Lehrkraft. Ein Technikproblem sollte nicht erst am Abgabetag sichtbar werden.</p></div></details>
+<details><summary>Muss ich fertige Präsentationsskripte oder Antworten abgeben?</summary><div><p>Eine komplette Skriptsammlung oder ausformulierte Antworten auf mögliche Defence-Fragen sind keine zusätzliche reguläre Abgabe. Deine Stichwortkarte bereitest du für PRESENT vor. Die vorgesehenen finalen Abgaben laufen über BUILD und TRACE.</p><p>Die Meilensteine helfen dir bei der Vorbereitung. Sie bilden keine zusätzliche Mappe, die du neben den vereinbarten Unterlagen einreichen musst.</p></div></details>
+<details><summary>Muss ich die Language Bank in der Prüfung aufsagen?</summary><div><p>Die 8–10 nützlichen Ausdrücke aus Unit / Academic English gehören zu deinem Individual Contribution Record. Nutze sie, um deine Inhalte klarer auszudrücken. Daraus entsteht kein zusätzlicher Prüfungsteil und keine Pflicht, alle Ausdrücke künstlich in einen Vortrag einzubauen.</p></div></details>
+</section>
+
+<section class="section" id="selbstcheck" aria-labelledby="selbstcheck-title">
+<div class="section-head"><p class="section-index">08 · Habe ich das Format verstanden?</p><h2 id="selbstcheck-title">Sechs kurze Verständnisfragen</h2><p>Entscheide zunächst selbst. Die aufklappbare Erklärung hilft dir beim Vergleichen. Wenn die automatische Auswertung in deiner Ansicht verfügbar ist, kannst du auch alle Antworten gemeinsam prüfen.</p></div>
+<form id="understanding-check"><fieldset class="quiz-question" data-question="1" id="q1"><legend><span>01</span> Wann werden BUILD und TRACE bewertet?</legend><label class="choice"><input type="radio" name="q1" value="0"><span><strong>A · </strong>Erst während der Fragen in DEFEND.</span></label><label class="choice"><input type="radio" name="q1" value="1"><span><strong>B · </strong>Nach der finalen Abgabe und vor der eigentlichen Schulaufgabe.</span></label><label class="choice"><input type="radio" name="q1" value="2"><span><strong>C · </strong>Nur bei den Meilensteinen M0 bis M3.</span></label><p class="quiz-feedback" id="feedback-1" role="status" aria-live="polite" hidden></p><details class="self-answer"><summary>Erklärung ansehen</summary><p><strong>Richtig: B.</strong> BUILD und TRACE werden nach der Abgabe vor der Schulaufgabe bewertet. PRESENT und DEFEND entstehen live am Prüfungstag. <a href="#pruefung">Diesen Punkt nachlesen</a>.</p></details></fieldset><fieldset class="quiz-question" data-question="2" id="q2"><legend><span>02</span> Euer Podcast ist fertig. Was ist dein Auftrag in PRESENT?</legend><label class="choice"><input type="radio" name="q2" value="0"><span><strong>A · </strong>Den kompletten Podcast abspielen.</span></label><label class="choice"><input type="radio" name="q2" value="1"><span><strong>B · </strong>Nur erzählen, wer welche Software benutzt hat.</span></label><label class="choice"><input type="radio" name="q2" value="2"><span><strong>C · </strong>Eigene Erkenntnisse, wichtige Belege und Entscheidungen erklären.</span></label><p class="quiz-feedback" id="feedback-2" role="status" aria-live="polite" hidden></p><details class="self-answer"><summary>Erklärung ansehen</summary><p><strong>Richtig: C.</strong> PRESENT ist dein eigener Vortrag. Das bereits abgegebene Produkt dient als Hintergrund; es ersetzt deine mündliche Leistung nicht. <a href="#present-ablauf">Diesen Punkt nachlesen</a>.</p></details></fieldset><fieldset class="quiz-question" data-question="3" id="q3"><legend><span>03</span> Was unterscheidet TRACE von DEFEND?</legend><label class="choice"><input type="radio" name="q3" value="0"><span><strong>A · </strong>TRACE bewertet dokumentierte Projektarbeit, DEFEND die spontane Prüfungsleistung.</span></label><label class="choice"><input type="radio" name="q3" value="1"><span><strong>B · </strong>Beide bewerten, ob der Source Log vollständig ist.</span></label><label class="choice"><input type="radio" name="q3" value="2"><span><strong>C · </strong>In DEFEND kann ich fehlende Prozessnachweise nachreichen.</span></label><p class="quiz-feedback" id="feedback-3" role="status" aria-live="polite" hidden></p><details class="self-answer"><summary>Erklärung ansehen</summary><p><strong>Richtig: A.</strong> Dokumentierte Arbeit und spontane Leistung bleiben getrennt. Ein überzeugendes Gespräch ersetzt keine fehlende TRACE-Dokumentation. <a href="#trace-defend">Diesen Punkt nachlesen</a>.</p></details></fieldset><fieldset class="quiz-question" data-question="4" id="q4"><legend><span>04</span> Welche Hilfe ist in DEFEND erlaubt?</legend><label class="choice"><input type="radio" name="q4" value="0"><span><strong>A · </strong>Ein ausformulierter Antworttext.</span></label><label class="choice"><input type="radio" name="q4" value="1"><span><strong>B · </strong>Keine Notizen; ich antworte spontan.</span></label><label class="choice"><input type="radio" name="q4" value="2"><span><strong>C · </strong>Dieselbe Stichwortkarte wie in PRESENT.</span></label><p class="quiz-feedback" id="feedback-4" role="status" aria-live="polite" hidden></p><details class="self-answer"><summary>Erklärung ansehen</summary><p><strong>Richtig: B.</strong> Die Stichwortkarte gehört zu PRESENT. In DEFEND sprichst du ohne Notizen und reagierst auf die gestellten Fragen. <a href="#defend-ablauf">Diesen Punkt nachlesen</a>.</p></details></fieldset><fieldset class="quiz-question" data-question="5" id="q5"><legend><span>05</span> Was bringt dir ein sorgfältiger Source Log für die Prüfung?</legend><label class="choice"><input type="radio" name="q5" value="0"><span><strong>A · </strong>Er ersetzt das eigene Verständnis der Quellen.</span></label><label class="choice"><input type="radio" name="q5" value="1"><span><strong>B · </strong>Er liefert eine fertige Antwort auf jede Frage.</span></label><label class="choice"><input type="radio" name="q5" value="2"><span><strong>C · </strong>Er hilft dir, Belege, Verwendung und Grenzen deiner Aussagen nachvollziehbar zu halten.</span></label><p class="quiz-feedback" id="feedback-5" role="status" aria-live="polite" hidden></p><details class="self-answer"><summary>Erklärung ansehen</summary><p><strong>Richtig: C.</strong> Die Dokumentation unterstützt dein Lernen. Im Gespräch musst du die Aussage, den Beleg und ihre Grenzen trotzdem selbst erklären können. <a href="#quellen">Diesen Punkt nachlesen</a>.</p></details></fieldset><fieldset class="quiz-question" data-question="6" id="q6"><legend><span>06</span> Wie erledigt ihr die finale Abgabe?</legend><label class="choice"><input type="radio" name="q6" value="0"><span><strong>A · </strong>Einmal BUILD für die Gruppe und zusätzlich TRACE von jeder Person.</span></label><label class="choice"><input type="radio" name="q6" value="1"><span><strong>B · </strong>Nur ein Gruppenmitglied gibt alles als TRACE ab.</span></label><label class="choice"><input type="radio" name="q6" value="2"><span><strong>C · </strong>Das Zeigen des Produkts am Prüfungstag reicht.</span></label><p class="quiz-feedback" id="feedback-6" role="status" aria-live="polite" hidden></p><details class="self-answer"><summary>Erklärung ansehen</summary><p><strong>Richtig: A.</strong> BUILD – Final Submission und TRACE – Process Evidence sind zwei getrennte Abgaben. Die Gruppenabgabe ersetzt deine persönliche TRACE-Abgabe nicht. <a href="#abgabe">Diesen Punkt nachlesen</a>.</p></details></fieldset>
+<div class="quiz-actions js-only"><button type="submit" class="action">Antworten prüfen</button><button type="button" id="reset-quiz" class="action secondary">Neu versuchen</button></div>
+<div id="quiz-result" class="quiz-result" role="status" aria-live="polite" hidden></div>
+</form>
+<noscript><p class="callout">Die automatische Auswertung ist in dieser Ansicht nicht aktiv. Du kannst alle Inhalte lesen und bei jeder Frage die Erklärung zum Selbstvergleich verwenden.</p></noscript>
+<div class="callout"><p><strong>Dein Fokus für die nächste Arbeitsphase:</strong> Entscheide nach dem Selbstcheck, welche eine Sache du jetzt klären oder üben willst. Nutze dazu die passende Stelle dieser Begleitung und die vorgesehenen Projektseiten in OneNote.</p></div>
+</section>
+</main>
+<footer class="wrap footer"><p><strong>Scotland Project Challenge · Projektschulaufgabe Englisch 10 · 2026/27</strong><br>Stand: 23.10.2026 · Erklärungen auf Deutsch zur Orientierung; Produkt, PRESENT und DEFEND auf Englisch. Die vereinbarten Projektunterlagen und das Bewertungsraster sind maßgeblich.</p><p><a href="#start">Zurück zum Anfang</a><button class="action secondary js-only print-button" type="button" id="print-guide">Drucken / als PDF sichern</button></p><p>Diese Begleitung ist eine Orientierungshilfe. Persönliche Prozessnachweise und verbindliche Abgaben bleiben in OneNote und Teams.</p></footer>
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('js');
+  var questions = [{"q": "Wann werden BUILD und TRACE bewertet?", "options": ["Erst während der Fragen in DEFEND.", "Nach der finalen Abgabe und vor der eigentlichen Schulaufgabe.", "Nur bei den Meilensteinen M0 bis M3."], "correct": 1, "why": "BUILD und TRACE werden nach der Abgabe vor der Schulaufgabe bewertet. PRESENT und DEFEND entstehen live am Prüfungstag.", "anchor": "pruefung"}, {"q": "Euer Podcast ist fertig. Was ist dein Auftrag in PRESENT?", "options": ["Den kompletten Podcast abspielen.", "Nur erzählen, wer welche Software benutzt hat.", "Eigene Erkenntnisse, wichtige Belege und Entscheidungen erklären."], "correct": 2, "why": "PRESENT ist dein eigener Vortrag. Das bereits abgegebene Produkt dient als Hintergrund; es ersetzt deine mündliche Leistung nicht.", "anchor": "present-ablauf"}, {"q": "Was unterscheidet TRACE von DEFEND?", "options": ["TRACE bewertet dokumentierte Projektarbeit, DEFEND die spontane Prüfungsleistung.", "Beide bewerten, ob der Source Log vollständig ist.", "In DEFEND kann ich fehlende Prozessnachweise nachreichen."], "correct": 0, "why": "Dokumentierte Arbeit und spontane Leistung bleiben getrennt. Ein überzeugendes Gespräch ersetzt keine fehlende TRACE-Dokumentation.", "anchor": "trace-defend"}, {"q": "Welche Hilfe ist in DEFEND erlaubt?", "options": ["Ein ausformulierter Antworttext.", "Keine Notizen; ich antworte spontan.", "Dieselbe Stichwortkarte wie in PRESENT."], "correct": 1, "why": "Die Stichwortkarte gehört zu PRESENT. In DEFEND sprichst du ohne Notizen und reagierst auf die gestellten Fragen.", "anchor": "defend-ablauf"}, {"q": "Was bringt dir ein sorgfältiger Source Log für die Prüfung?", "options": ["Er ersetzt das eigene Verständnis der Quellen.", "Er liefert eine fertige Antwort auf jede Frage.", "Er hilft dir, Belege, Verwendung und Grenzen deiner Aussagen nachvollziehbar zu halten."], "correct": 2, "why": "Die Dokumentation unterstützt dein Lernen. Im Gespräch musst du die Aussage, den Beleg und ihre Grenzen trotzdem selbst erklären können.", "anchor": "quellen"}, {"q": "Wie erledigt ihr die finale Abgabe?", "options": ["Einmal BUILD für die Gruppe und zusätzlich TRACE von jeder Person.", "Nur ein Gruppenmitglied gibt alles als TRACE ab.", "Das Zeigen des Produkts am Prüfungstag reicht."], "correct": 0, "why": "BUILD – Final Submission und TRACE – Process Evidence sind zwei getrennte Abgaben. Die Gruppenabgabe ersetzt deine persönliche TRACE-Abgabe nicht.", "anchor": "abgabe"}];
+  var form = document.getElementById('understanding-check');
+  var result = document.getElementById('quiz-result');
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    var right=0,answered=0;
+    questions.forEach(function(q,index){
+      var number=index+1;
+      var chosen=form.querySelector('input[name="q'+number+'"]:checked');
+      var feedback=document.getElementById('feedback-'+number);
+      feedback.hidden=false;
+      feedback.classList.remove('correct');
+      if(!chosen){feedback.textContent='Noch offen: Wähle eine Antwort und prüfe danach erneut.';return;}
+      answered+=1;
+      if(Number(chosen.value)===q.correct){right+=1;feedback.classList.add('correct');feedback.textContent='Richtig. '+q.why;}
+      else{feedback.textContent='Noch nicht. '+q.why;}
+    });
+    result.hidden=false;
+    result.textContent=right+' von '+questions.length+' Antworten stimmen. '+(answered<questions.length?'Du hast '+(questions.length-answered)+' Frage(n) noch nicht beantwortet. ':'')+(right===questions.length?'Du hast die zentralen Unterschiede verstanden. Prüfe nun, was du in deiner eigenen Arbeit als Nächstes brauchst.':'Lies die Erklärungen und versuche die noch unklaren Fragen erneut. Dies ist ein Selbstcheck, keine Benotung.');
+  });
+  document.getElementById('reset-quiz').addEventListener('click',function(){
+    form.reset();result.hidden=true;
+    Array.prototype.forEach.call(form.querySelectorAll('.quiz-feedback'),function(item){item.hidden=true;item.textContent='';item.classList.remove('correct');});
+    Array.prototype.forEach.call(form.querySelectorAll('details'),function(item){item.open=false;});
+    document.getElementById('q1').scrollIntoView({block:'start'});
+  });
+  document.getElementById('print-guide').addEventListener('click',function(){window.print();});
+  var printDetails=[];
+  window.addEventListener('beforeprint',function(){printDetails=Array.prototype.map.call(document.querySelectorAll('details'),function(item){var record={item:item,open:item.open};item.open=true;return record;});});
+  window.addEventListener('afterprint',function(){printDetails.forEach(function(record){record.item.open=record.open;});});
+}());
+</script>
+</body>
+</html>
